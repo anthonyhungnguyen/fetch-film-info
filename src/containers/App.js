@@ -11,7 +11,7 @@ const App = () => {
 	const [data, setData] = useState({})
 	const [loading, setLoading] = useState(false)
 	const [url, setUrl] = useState(
-		`http://www.omdbapi.com/?t=Avengers&apikey=8c9b19e1`
+		`https://www.omdbapi.com/?t=Avengers&apikey=8c9b19e1`
 	)
 	const override = css`
 		margin: auto;
@@ -28,24 +28,28 @@ const App = () => {
 	return (
 		<Container className={styles.App}>
 			<Row>
-				<Col xs="10">
+				<Col xs="9">
 					<Search setUrl={setUrl} url={url} data={data} />
 				</Col>
-				<Col xs="2">
+				<Col xs="3">
 					<Button onClick={handleSearchButton}>Search Film</Button>
 				</Col>
 			</Row>
-			{loading ? (
-				<BounceLoader
-					css={override}
-					sizeUnit={'px'}
-					size={60}
-					color={'#1abc9c'}
-					loading={loading}
-				/>
-			) : (
-				<FilmTable data={data} />
-			)}
+			<Row>
+				<Col xs="9">
+					{loading ? (
+						<BounceLoader
+							css={override}
+							sizeUnit={'px'}
+							size={60}
+							color={'#1abc9c'}
+							loading={loading}
+						/>
+					) : (
+						<FilmTable data={data} />
+					)}
+				</Col>
+			</Row>
 		</Container>
 	)
 }

@@ -6,10 +6,6 @@ const FilmTable = props => {
 	return (
 		<Table dark>
 			<tbody>
-				<tr>
-					<td>KEY</td>
-					<td>VALUE</td>
-				</tr>
 				{Object.entries(props.data).map((item, i) => (
 					<Row key={i} item={item} />
 				))}
