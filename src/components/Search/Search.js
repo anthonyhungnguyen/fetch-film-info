@@ -9,7 +9,7 @@ const Search = props => {
 					type="text"
 					onChange={e =>
 						props.setUrl(
-							`http://www.omdbapi.com/?t=${e.target.value}&apikey=8c9b19e1`
+							`https://www.omdbapi.com/?t=${e.target.value}&apikey=8c9b19e1`
 						)
 					}
 					placeholder="Enter film name"
